@@ -1,0 +1,82 @@
+{
+  "name": "intelli-explorer",
+  "displayName": "Intelli Explorer",
+  "description": "Explore your files and folders in a different way on VS Code — with intelligent grouping by file type and pattern",
+  "version": "0.1.0",
+  "publisher": "joangeldelarosa",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:intelliExplorer.fileHierarchy",
+    "onView:intelliExplorer.smartGroups"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "intelli-explorer",
+          "title": "Intelli Explorer",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "intelli-explorer": [
+        {
+          "id": "intelliExplorer.fileHierarchy",
+          "name": "File Hierarchy"
+        },
+        {
+          "id": "intelliExplorer.smartGroups",
+          "name": "Smart Groups"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "intelliExplorer.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)",
+        "category": "Intelli Explorer"
+      },
+      {
+        "command": "intelliExplorer.openFile",
+        "title": "Open File",
+        "category": "Intelli Explorer"
+      },
+      {
+        "command": "intelliExplorer.revealInNativeExplorer",
+        "title": "Reveal in Native Explorer",
+        "category": "Intelli Explorer"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "intelliExplorer.refresh",
+          "when": "view == intelliExplorer.fileHierarchy || view == intelliExplorer.smartGroups",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  }
+}
