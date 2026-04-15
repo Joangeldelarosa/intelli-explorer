@@ -71,11 +71,25 @@ export class SmartGroupsProvider implements vscode.TreeDataProvider<SmartGroupIt
   private fileWatcher: vscode.FileSystemWatcher | undefined;
   private cachedGroups: Map<string, Map<string, vscode.Uri[]>> | undefined;
 
+  private refreshTimeout: ReturnType<typeof setTimeout> | undefined;
+
   constructor() {
     this.fileWatcher = vscode.workspace.createFileSystemWatcher('**/*');
-    this.fileWatcher.onDidCreate(() => this.refresh());
-    this.fileWatcher.onDidDelete(() => this.refresh());
-    this.fileWatcher.onDidChange(() => this.refresh());
+    const debouncedRefresh = () => this.debouncedRefresh();
+    this.fileWatcher.onDidCreate(debouncedRefresh);
+    this.fileWatcher.onDidDelete(debouncedRefresh);
+    this.fileWatcher.onDidChange(debouncedRefresh);
+  }
+
+  /** Debounce rapid file system events to avoid excessive cache invalidation. */
+  private debouncedRefresh(): void {
+    if (this.refreshTimeout) {
+      clearTimeout(this.refreshTimeout);
+    }
+    this.refreshTimeout = setTimeout(() => {
+      this.refreshTimeout = undefined;
+      this.refresh();
+    }, 300);
   }
 
   refresh(): void {
@@ -84,6 +98,9 @@ export class SmartGroupsProvider implements vscode.TreeDataProvider<SmartGroupIt
   }
 
   dispose(): void {
+    if (this.refreshTimeout) {
+      clearTimeout(this.refreshTimeout);
+    }
     this.fileWatcher?.dispose();
     this._onDidChangeTreeData.dispose();
   }
