@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Presets and Settings</title>
+  <desc id="desc">Visual cards showing Smart Groups presets and configuration knobs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fcff"/>
+      <stop offset="100%" stop-color="#edf6ff"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f3f9ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="94" y="108" fill="#103b60" font-family="Helvetica, Arial, sans-serif" font-size="56" font-weight="700">Presets + toggles = fast context switches</text>
+  <text x="94" y="156" fill="#42698c" font-family="Helvetica, Arial, sans-serif" font-size="30">Use toolbar actions for instant mode changes without touching your architecture.</text>
+
+  <g font-family="Helvetica, Arial, sans-serif">
+    <rect x="94" y="210" width="988" height="620" rx="26" fill="url(#card)" stroke="#dcecf9"/>
+    <text x="130" y="262" fill="#0f3e63" font-size="30" font-weight="700">Quick Presets</text>
+
+    <g font-size="24" fill="#27597d">
+      <text x="130" y="312">1. Language -> Pattern</text>
+      <text x="130" y="352">2. Module -> Pattern</text>
+      <text x="130" y="392">3. Module -> Extension</text>
+      <text x="130" y="432">4. Extension -> Pattern</text>
+      <text x="130" y="472">5. Extension Only</text>
+      <text x="130" y="512">6. Module Only</text>
+      <text x="130" y="552">7. Flat (No Grouping)</text>
+    </g>
+
+    <text x="130" y="612" fill="#0f3e63" font-size="30" font-weight="700">Toolbar Actions</text>
+    <text x="130" y="654" fill="#27597d" font-size="24">Configure Smart Groups...</text>
+    <text x="130" y="690" fill="#27597d" font-size="24">Toggle File View (List/Folders)</text>
+    <text x="130" y="726" fill="#27597d" font-size="24">Toggle Extension Grouping</text>
+
+    <rect x="1122" y="210" width="384" height="620" rx="26" fill="url(#card)" stroke="#dcecf9"/>
+    <text x="1154" y="262" fill="#0f3e63" font-size="30" font-weight="700">Settings</text>
+
+    <rect x="1154" y="290" width="320" height="76" rx="14" fill="#ecf6ff"/>
+    <text x="1170" y="323" fill="#2f6286" font-family="monospace" font-size="17">groupBy</text>
+    <text x="1170" y="347" fill="#2f6286" font-family="monospace" font-size="17">fileView</text>
+
+    <rect x="1154" y="380" width="320" height="76" rx="14" fill="#ecf6ff"/>
+    <text x="1170" y="413" fill="#2f6286" font-family="monospace" font-size="17">moduleDepth</text>
+    <text x="1170" y="437" fill="#2f6286" font-family="monospace" font-size="17">showCounts</text>
+
+    <rect x="1154" y="470" width="320" height="76" rx="14" fill="#ecf6ff"/>
+    <text x="1170" y="503" fill="#2f6286" font-family="monospace" font-size="17">colorfulIcons</text>
+    <text x="1170" y="527" fill="#2f6286" font-family="monospace" font-size="17">workspace scope</text>
+
+    <rect x="1154" y="570" width="320" height="216" rx="16" fill="#0f2942"/>
+    <text x="1170" y="610" fill="#cce7ff" font-family="monospace" font-size="15">{
+    </text>
+    <text x="1170" y="636" fill="#cce7ff" font-family="monospace" font-size="15">  "intelliExplorer.smartGroups.groupBy":</text>
+    <text x="1170" y="660" fill="#9be6cf" font-family="monospace" font-size="15">  ["module", "pattern"],</text>
+    <text x="1170" y="684" fill="#cce7ff" font-family="monospace" font-size="15">  "...fileView": "folders",</text>
+    <text x="1170" y="708" fill="#cce7ff" font-family="monospace" font-size="15">  "...showCounts": true</text>
+    <text x="1170" y="732" fill="#cce7ff" font-family="monospace" font-size="15">}</text>
+  </g>
+</svg>

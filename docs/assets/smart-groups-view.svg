@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Smart Groups Views</title>
+  <desc id="desc">Visual comparison of Smart Groups list and folder views.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4fbff"/>
+      <stop offset="100%" stop-color="#e9f6ff"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f2f8ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="100" y="108" fill="#0d3558" font-family="Helvetica, Arial, sans-serif" font-size="56" font-weight="700">Smart Groups adapts to your task</text>
+  <text x="100" y="156" fill="#3d678a" font-family="Helvetica, Arial, sans-serif" font-size="30">Switch between structural context and fast scanning in one click.</text>
+
+  <rect x="100" y="210" width="670" height="620" rx="24" fill="url(#panel)" stroke="#d6e9f8"/>
+  <rect x="830" y="210" width="670" height="620" rx="24" fill="url(#panel)" stroke="#d6e9f8"/>
+
+  <text x="130" y="262" fill="#0f3e63" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="700">Flat List View</text>
+  <text x="860" y="262" fill="#0f3e63" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="700">Folder View</text>
+
+  <rect x="130" y="286" width="610" height="34" rx="10" fill="#e8f4ff"/>
+  <text x="146" y="310" fill="#29577c" font-family="monospace" font-size="17">groupBy: ["extension", "pattern"]</text>
+
+  <rect x="860" y="286" width="610" height="34" rx="10" fill="#e8f4ff"/>
+  <text x="876" y="310" fill="#29577c" font-family="monospace" font-size="17">groupBy: ["module", "pattern"], fileView: "folders"</text>
+
+  <text x="140" y="354" fill="#133f62" font-family="monospace" font-size="20" font-weight="700">.ts (42)</text>
+  <text x="164" y="385" fill="#8a5a14" font-family="monospace" font-size="18">Controllers (7)</text>
+  <text x="188" y="412" fill="#345f7f" font-family="monospace" font-size="17">users.controller.ts</text>
+  <text x="188" y="438" fill="#345f7f" font-family="monospace" font-size="17">auth.controller.ts</text>
+  <text x="164" y="468" fill="#0d7b64" font-family="monospace" font-size="18">Services (9)</text>
+  <text x="188" y="495" fill="#345f7f" font-family="monospace" font-size="17">users.service.ts</text>
+  <text x="188" y="521" fill="#345f7f" font-family="monospace" font-size="17">billing.service.ts</text>
+  <text x="164" y="551" fill="#6d3ea0" font-family="monospace" font-size="18">DTOs (11)</text>
+  <text x="188" y="578" fill="#345f7f" font-family="monospace" font-size="17">create-user.dto.ts</text>
+  <text x="188" y="604" fill="#345f7f" font-family="monospace" font-size="17">update-user.dto.ts</text>
+  <text x="140" y="650" fill="#133f62" font-family="monospace" font-size="20" font-weight="700">.json (6)</text>
+  <text x="164" y="680" fill="#345f7f" font-family="monospace" font-size="17">package.json</text>
+  <text x="164" y="706" fill="#345f7f" font-family="monospace" font-size="17">tsconfig.json</text>
+
+  <text x="870" y="354" fill="#133f62" font-family="monospace" font-size="20" font-weight="700">users (18)</text>
+  <text x="894" y="385" fill="#8a5a14" font-family="monospace" font-size="18">Controllers (1)</text>
+  <text x="918" y="412" fill="#345f7f" font-family="monospace" font-size="17">users.controller.ts</text>
+  <text x="894" y="442" fill="#0d7b64" font-family="monospace" font-size="18">Services (2)</text>
+  <text x="918" y="469" fill="#345f7f" font-family="monospace" font-size="17">users.service.ts</text>
+  <text x="894" y="499" fill="#6d3ea0" font-family="monospace" font-size="18">DTOs (5)</text>
+  <text x="918" y="526" fill="#345f7f" font-family="monospace" font-size="17">dto/create-user.dto.ts</text>
+  <text x="918" y="552" fill="#345f7f" font-family="monospace" font-size="17">dto/update-user.dto.ts</text>
+
+  <text x="870" y="602" fill="#133f62" font-family="monospace" font-size="20" font-weight="700">auth (12)</text>
+  <text x="894" y="633" fill="#8a5a14" font-family="monospace" font-size="18">Guards (3)</text>
+  <text x="918" y="660" fill="#345f7f" font-family="monospace" font-size="17">guards/jwt-auth.guard.ts</text>
+  <text x="894" y="690" fill="#0d7b64" font-family="monospace" font-size="18">Strategies (2)</text>
+  <text x="918" y="717" fill="#345f7f" font-family="monospace" font-size="17">strategies/jwt.strategy.ts</text>
+
+  <text x="130" y="786" fill="#356083" font-family="Helvetica, Arial, sans-serif" font-size="22">Fast scan across patterns and extensions.</text>
+  <text x="860" y="786" fill="#356083" font-family="Helvetica, Arial, sans-serif" font-size="22">Deep structural context for domain workflows.</text>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "intelliExplorer.smartGroups.groupBy": [
+    "extension",
+    "pattern"
+  ],
+  "intelliExplorer.smartGroups.fileView": "flat",
+  "intelliExplorer.smartGroups.moduleDepth": 1,
+  "intelliExplorer.smartGroups.showCounts": true,
+  "intelliExplorer.smartGroups.colorfulIcons": true
+}

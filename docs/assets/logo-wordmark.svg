@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 320" role="img" aria-labelledby="title desc">
+  <title id="title">Intelli Explorer Wordmark</title>
+  <desc id="desc">Brand icon with Intelli Explorer wordmark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b2447"/>
+      <stop offset="100%" stop-color="#0ca3a3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1320" height="320" rx="36" fill="#f4fbff"/>
+  <rect x="36" y="36" width="248" height="248" rx="58" fill="url(#bg)"/>
+  <circle cx="160" cy="160" r="74" fill="#ffffff"/>
+  <circle cx="160" cy="160" r="60" fill="#0d3f63"/>
+  <path d="M160 98 L176 149 L160 160 L144 149 Z" fill="#ffffff"/>
+  <path d="M160 222 L146 171 L160 160 L174 171 Z" fill="#5ee4d1"/>
+  <path d="M222 160 L171 174 L160 160 L171 146 Z" fill="#85f0df"/>
+  <path d="M98 160 L149 146 L160 160 L149 174 Z" fill="#baf7ec"/>
+  <circle cx="160" cy="160" r="11" fill="#ffffff"/>
+
+  <text x="340" y="146" fill="#0e3b5f" font-family="Helvetica, Arial, sans-serif" font-size="88" font-weight="700">Intelli Explorer</text>
+  <text x="340" y="206" fill="#3f6b8f" font-family="Helvetica, Arial, sans-serif" font-size="34">Explore by intent, not by guesswork.</text>
+</svg>

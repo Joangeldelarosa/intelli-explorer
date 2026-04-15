@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Intelli Explorer Hero</title>
+  <desc id="desc">Hero banner with product slogan and two-panel explorer mockup.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071426"/>
+      <stop offset="55%" stop-color="#0d3b66"/>
+      <stop offset="100%" stop-color="#11798e"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f2239"/>
+      <stop offset="100%" stop-color="#0a1b2f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4cd3ff"/>
+      <stop offset="100%" stop-color="#7cf7d4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="240" cy="120" r="210" fill="#5be6ff" opacity="0.15"/>
+  <circle cx="1420" cy="760" r="250" fill="#73f5d7" opacity="0.12"/>
+
+  <text x="96" y="180" fill="#9bd8ff" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="3">VS CODE EXTENSION</text>
+  <text x="96" y="280" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="78" font-weight="700">Intelli Explorer</text>
+  <text x="96" y="350" fill="#cde7ff" font-family="Helvetica, Arial, sans-serif" font-size="36" font-weight="500">Explore by intent, not by guesswork.</text>
+  <text x="96" y="430" fill="#c0ddf7" font-family="Helvetica, Arial, sans-serif" font-size="29">File Hierarchy + Smart Groups for real-world architecture workflows.</text>
+
+  <rect x="96" y="478" width="620" height="64" rx="32" fill="#0f2740" opacity="0.95"/>
+  <rect x="108" y="490" width="324" height="40" rx="20" fill="url(#accent)"/>
+  <text x="142" y="517" fill="#042137" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Ready for Production</text>
+  <text x="452" y="517" fill="#cde7ff" font-family="Helvetica, Arial, sans-serif" font-size="22">Configurable per project</text>
+
+  <g transform="translate(860 140)">
+    <rect x="0" y="0" width="640" height="620" rx="26" fill="#091b2f" opacity="0.95"/>
+    <rect x="24" y="24" width="592" height="64" rx="14" fill="#0f2a44"/>
+    <circle cx="54" cy="56" r="8" fill="#f46f6f"/>
+    <circle cx="80" cy="56" r="8" fill="#f4be6f"/>
+    <circle cx="106" cy="56" r="8" fill="#6fe18f"/>
+    <text x="138" y="63" fill="#d4ebff" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="700">Intelli Explorer</text>
+
+    <rect x="24" y="104" width="262" height="492" rx="14" fill="url(#panel)"/>
+    <text x="46" y="142" fill="#91c7ea" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="700">File Hierarchy</text>
+    <text x="46" y="176" fill="#f0f8ff" font-family="monospace" font-size="18">src/</text>
+    <text x="66" y="206" fill="#c4dbef" font-family="monospace" font-size="17">providers/</text>
+    <text x="86" y="236" fill="#c4dbef" font-family="monospace" font-size="17">smartGroupsProvider.ts</text>
+    <text x="86" y="266" fill="#c4dbef" font-family="monospace" font-size="17">fileHierarchyProvider.ts</text>
+    <text x="66" y="296" fill="#c4dbef" font-family="monospace" font-size="17">utils/</text>
+    <text x="86" y="326" fill="#c4dbef" font-family="monospace" font-size="17">fileCategories.ts</text>
+
+    <rect x="300" y="104" width="316" height="492" rx="14" fill="url(#panel)"/>
+    <text x="322" y="142" fill="#8be5ce" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="700">Smart Groups</text>
+
+    <text x="322" y="178" fill="#d9f3ff" font-family="monospace" font-size="16">module/users (18)</text>
+    <text x="340" y="204" fill="#ffd89b" font-family="monospace" font-size="15">Controllers (1)</text>
+    <text x="358" y="226" fill="#d2e8ff" font-family="monospace" font-size="15">users.controller.ts</text>
+    <text x="340" y="252" fill="#aaf6dc" font-family="monospace" font-size="15">Services (2)</text>
+    <text x="358" y="274" fill="#d2e8ff" font-family="monospace" font-size="15">users.service.ts</text>
+
+    <text x="322" y="316" fill="#d9f3ff" font-family="monospace" font-size="16">module/auth (12)</text>
+    <text x="340" y="342" fill="#ffce8d" font-family="monospace" font-size="15">Guards (3)</text>
+    <text x="358" y="364" fill="#d2e8ff" font-family="monospace" font-size="15">jwt-auth.guard.ts</text>
+    <text x="340" y="390" fill="#7fd2ff" font-family="monospace" font-size="15">Strategies (2)</text>
+    <text x="358" y="412" fill="#d2e8ff" font-family="monospace" font-size="15">jwt.strategy.ts</text>
+
+    <text x="322" y="454" fill="#d9f3ff" font-family="monospace" font-size="16">module/billing (14)</text>
+    <text x="340" y="480" fill="#ffd89b" font-family="monospace" font-size="15">DTOs (4)</text>
+    <text x="358" y="502" fill="#d2e8ff" font-family="monospace" font-size="15">create-invoice.dto.ts</text>
+    <text x="340" y="528" fill="#d6b6ff" font-family="monospace" font-size="15">Extension (.ts)</text>
+    <text x="358" y="550" fill="#d2e8ff" font-family="monospace" font-size="15">billing.controller.ts</text>
+  </g>
+</svg>

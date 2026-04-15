@@ -28,10 +28,6 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onView:intelliExplorer.fileHierarchy",
-    "onView:intelliExplorer.smartGroups"
-  ],
   "main": "./out/extension.js",
   "contributes": {
     "viewsContainers": {
@@ -39,7 +35,7 @@
         {
           "id": "intelli-explorer",
           "title": "Intelli Explorer",
-          "icon": "resources/icon.svg"
+          "icon": "resources/activitybar-icon.svg"
         }
       ]
     },
@@ -71,6 +67,24 @@
         "command": "intelliExplorer.revealInNativeExplorer",
         "title": "Reveal in Native Explorer",
         "category": "Intelli Explorer"
+      },
+      {
+        "command": "intelliExplorer.configureSmartGroups",
+        "title": "Configure Smart Groups...",
+        "icon": "$(settings-gear)",
+        "category": "Intelli Explorer"
+      },
+      {
+        "command": "intelliExplorer.toggleSmartFileView",
+        "title": "Toggle File View (List/Folders)",
+        "icon": "$(list-tree)",
+        "category": "Intelli Explorer"
+      },
+      {
+        "command": "intelliExplorer.toggleExtensionGrouping",
+        "title": "Toggle Extension Grouping",
+        "icon": "$(symbol-file)",
+        "category": "Intelli Explorer"
       }
     ],
     "menus": {
@@ -79,12 +93,83 @@
           "command": "intelliExplorer.refresh",
           "when": "view == intelliExplorer.fileHierarchy || view == intelliExplorer.smartGroups",
           "group": "navigation"
+        },
+        {
+          "command": "intelliExplorer.configureSmartGroups",
+          "when": "view == intelliExplorer.smartGroups",
+          "group": "navigation@1"
+        },
+        {
+          "command": "intelliExplorer.toggleSmartFileView",
+          "when": "view == intelliExplorer.smartGroups",
+          "group": "navigation@2"
+        },
+        {
+          "command": "intelliExplorer.toggleExtensionGrouping",
+          "when": "view == intelliExplorer.smartGroups",
+          "group": "navigation@3"
         }
       ]
+    },
+    "configuration": {
+      "title": "Intelli Explorer",
+      "properties": {
+        "intelliExplorer.smartGroups.groupBy": {
+          "type": "array",
+          "description": "Grouping order used by Smart Groups. Set [] for flat mode.",
+          "default": [
+            "language",
+            "pattern"
+          ],
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "language",
+              "pattern",
+              "module",
+              "extension"
+            ]
+          }
+        },
+        "intelliExplorer.smartGroups.fileView": {
+          "type": "string",
+          "description": "How files are shown inside the last grouping level.",
+          "default": "flat",
+          "enum": [
+            "flat",
+            "folders"
+          ],
+          "enumDescriptions": [
+            "Flat list of files",
+            "Nested folder tree"
+          ]
+        },
+        "intelliExplorer.smartGroups.moduleDepth": {
+          "type": "number",
+          "description": "How many folder segments compose a module group.",
+          "default": 1,
+          "minimum": 1,
+          "maximum": 6
+        },
+        "intelliExplorer.smartGroups.showCounts": {
+          "type": "boolean",
+          "description": "Show item counts in group and folder rows.",
+          "default": true
+        },
+        "intelliExplorer.smartGroups.colorfulIcons": {
+          "type": "boolean",
+          "description": "Apply themed colors to Smart Groups icons and decorations.",
+          "default": true
+        }
+      }
     }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
+    "icon:png": "npx --yes sharp-cli -i resources/brand-icon.svg -o resources/icon.png resize 256 256",
+    "assets:build": "npm run icon:png && npx --yes sharp-cli -i docs/assets/hero-banner.svg -o docs/assets/hero-banner.png && npx --yes sharp-cli -i docs/assets/smart-groups-view.svg -o docs/assets/smart-groups-view.png && npx --yes sharp-cli -i docs/assets/use-cases-view.svg -o docs/assets/use-cases-view.png && npx --yes sharp-cli -i docs/assets/presets-view.svg -o docs/assets/presets-view.png && npx --yes sharp-cli -i docs/assets/logo-wordmark.svg -o docs/assets/logo-wordmark.png && npx --yes sharp-cli -i resources/brand-icon.svg -o docs/assets/icon-512.png resize 512 512",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "lint": "eslint src --ext ts",
@@ -96,9 +181,9 @@
   "devDependencies": {
     "@types/node": "^20.11.0",
     "@types/vscode": "^1.85.0",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "eslint": "^8.56.0",
-    "typescript": "^5.3.3"
+    "typescript": "5.3.3"
   }
 }

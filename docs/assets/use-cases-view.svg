@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Use Cases Grid</title>
+  <desc id="desc">Grid of common engineering workflows where Intelli Explorer is useful.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1f34"/>
+      <stop offset="100%" stop-color="#163f61"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f6fbff"/>
+      <stop offset="100%" stop-color="#edf7ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="88" y="102" fill="#a9e0ff" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="2">USE CASE PLAYBOOK</text>
+  <text x="88" y="164" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="60" font-weight="700">Built for everyday engineering reality</text>
+  <text x="88" y="212" fill="#d0e8ff" font-family="Helvetica, Arial, sans-serif" font-size="30">From backend architecture to migration audits, one explorer adapts to all.</text>
+
+  <g font-family="Helvetica, Arial, sans-serif">
+    <g transform="translate(88 258)">
+      <rect width="460" height="176" rx="20" fill="url(#card)"/>
+      <text x="30" y="52" fill="#0e3655" font-size="30" font-weight="700">NestJS Teams</text>
+      <text x="30" y="92" fill="#315f82" font-size="24">module -> pattern</text>
+      <text x="30" y="128" fill="#315f82" font-size="22">Find controllers/services/DTOs instantly.</text>
+    </g>
+
+    <g transform="translate(570 258)">
+      <rect width="460" height="176" rx="20" fill="url(#card)"/>
+      <text x="30" y="52" fill="#0e3655" font-size="30" font-weight="700">Frontend Features</text>
+      <text x="30" y="92" fill="#315f82" font-size="24">pattern -> module -> extension</text>
+      <text x="30" y="128" fill="#315f82" font-size="22">Navigate components, hooks, stores by intent.</text>
+    </g>
+
+    <g transform="translate(1052 258)">
+      <rect width="460" height="176" rx="20" fill="url(#card)"/>
+      <text x="30" y="52" fill="#0e3655" font-size="30" font-weight="700">Migration Sprints</text>
+      <text x="30" y="92" fill="#315f82" font-size="24">extension -> pattern</text>
+      <text x="30" y="128" fill="#315f82" font-size="22">Audit all file types and hotspots fast.</text>
+    </g>
+
+    <g transform="translate(88 454)">
+      <rect width="460" height="176" rx="20" fill="url(#card)"/>
+      <text x="30" y="52" fill="#0e3655" font-size="30" font-weight="700">Incident Debugging</text>
+      <text x="30" y="92" fill="#315f82" font-size="24">pattern -> module</text>
+      <text x="30" y="128" fill="#315f82" font-size="22">Jump to guards, filters, middleware now.</text>
+    </g>
+
+    <g transform="translate(570 454)">
+      <rect width="460" height="176" rx="20" fill="url(#card)"/>
+      <text x="30" y="52" fill="#0e3655" font-size="30" font-weight="700">Refactor Windows</text>
+      <text x="30" y="92" fill="#315f82" font-size="24">module -> pattern -> extension</text>
+      <text x="30" y="128" fill="#315f82" font-size="22">Make structural changes with confidence.</text>
+    </g>
+
+    <g transform="translate(1052 454)">
+      <rect width="460" height="176" rx="20" fill="url(#card)"/>
+      <text x="30" y="52" fill="#0e3655" font-size="30" font-weight="700">Onboarding</text>
+      <text x="30" y="92" fill="#315f82" font-size="24">module -> pattern + counts</text>
+      <text x="30" y="128" fill="#315f82" font-size="22">New devs understand architecture sooner.</text>
+    </g>
+  </g>
+
+  <rect x="88" y="680" width="1424" height="134" rx="22" fill="#0b2239" opacity="0.78"/>
+  <text x="120" y="741" fill="#bde7ff" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700">One extension, multiple navigation modes, zero architecture compromises.</text>
+  <text x="120" y="780" fill="#d6eeff" font-family="Helvetica, Arial, sans-serif" font-size="24">Keep your code modular. Change your perspective instantly.</text>
+</svg>
