@@ -4,8 +4,6 @@ import {
   detectPattern,
   getLanguageCategory,
   EXTENSION_CATEGORIES,
-  FileCategory,
-  PatternCategory,
 } from '../utils/fileCategories';
 
 /**
@@ -39,14 +37,6 @@ export class SmartGroupItem extends vscode.TreeItem {
       this.contextValue = 'smartPattern';
     }
   }
-}
-
-interface GroupedFile {
-  uri: vscode.Uri;
-  fileName: string;
-  language: string;
-  languageIcon: string;
-  pattern?: string;
 }
 
 /**

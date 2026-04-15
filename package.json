@@ -4,6 +4,24 @@
   "description": "Explore your files and folders in a different way on VS Code — with intelligent grouping by file type and pattern",
   "version": "0.1.0",
   "publisher": "joangeldelarosa",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Joangeldelarosa/intelli-explorer"
+  },
+  "bugs": {
+    "url": "https://github.com/Joangeldelarosa/intelli-explorer/issues"
+  },
+  "homepage": "https://github.com/Joangeldelarosa/intelli-explorer#readme",
+  "icon": "resources/icon.png",
+  "keywords": [
+    "explorer",
+    "file explorer",
+    "smart groups",
+    "file hierarchy",
+    "file organizer",
+    "vscode"
+  ],
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -69,7 +87,11 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "lint": "eslint src --ext ts"
+    "lint": "eslint src --ext ts",
+    "pretest": "tsc -p tsconfig.test.json",
+    "test": "node out-test/test/fileCategories.test.js",
+    "package": "npx @vscode/vsce package",
+    "clean": "rm -rf out out-test"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
