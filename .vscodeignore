@@ -17,3 +17,4 @@ docs/assets/icon-512.png
 resources/brand-icon.svg
 out/example-file-tests/**
 out/test/**
+azure-pipelines.yml

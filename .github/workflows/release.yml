@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build visual assets
+        run: npm run assets:build
+
       - name: Lint
         run: npm run lint
 
@@ -34,20 +37,27 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Install vsce
-        run: npm install -g @vscode/vsce
-
       - name: Package extension
-        run: vsce package
+        run: npm run package
+
+      - name: Resolve VSIX file
+        id: vsix
+        run: echo "path=$(ls -1 *.vsix | head -n 1)" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: "*.vsix"
+          files: ${{ steps.vsix.outputs.path }}
           generate_release_notes: true
 
       - name: Publish to VS Code Marketplace
-        if: vars.PUBLISH_TO_MARKETPLACE == 'true'
-        run: vsce publish
+        if: ${{ vars['PUBLISH_TO_MARKETPLACE'] == 'true' }}
+        run: |
+          if [ -z "${VSCE_PAT}" ]; then
+            echo "VSCE_PAT is empty. Skipping marketplace publish."
+            exit 0
+          fi
+
+          npx @vscode/vsce publish --packagePath "${{ steps.vsix.outputs.path }}"
         env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+          VSCE_PAT: ${{ secrets['VSCE_PAT'] }}

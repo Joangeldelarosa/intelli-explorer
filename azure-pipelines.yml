@@ -1,0 +1,111 @@
+trigger:
+  branches:
+    include:
+      - main
+  tags:
+    include:
+      - v*
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: Validate
+    displayName: Validate and Package
+    jobs:
+      - job: build
+        displayName: Build, Test, and Create VSIX
+        steps:
+          - task: NodeTool@0
+            displayName: Use Node.js 20
+            inputs:
+              versionSpec: 20.x
+
+          - script: npm ci
+            displayName: Install dependencies
+
+          - script: npm run assets:build
+            displayName: Build visual assets
+
+          - script: |
+              test -f resources/icon.png
+              test -f resources/activitybar-icon.svg
+              test -f docs/assets/hero-banner.png
+              test -f docs/assets/smart-groups-view.png
+              test -f docs/assets/use-cases-view.png
+              test -f docs/assets/presets-view.png
+            displayName: Verify required branding assets
+
+          - script: npm run compile
+            displayName: Compile extension
+
+          - script: npm run lint
+            displayName: Lint sources
+
+          - script: npm test
+            displayName: Run tests
+
+          - script: npm run package
+            displayName: Package VSIX
+
+          - script: |
+              mkdir -p "$(Build.ArtifactStagingDirectory)"
+              cp ./*.vsix "$(Build.ArtifactStagingDirectory)/"
+            displayName: Stage VSIX artifact
+
+          - publish: $(Build.ArtifactStagingDirectory)
+            artifact: vsix
+            displayName: Publish VSIX artifact
+
+  - stage: PublishMarketplace
+    displayName: Publish to VS Code Marketplace
+    dependsOn: Validate
+    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['PUBLISH_TO_MARKETPLACE'], 'true'))
+    jobs:
+      - job: publish
+        displayName: Publish extension
+        steps:
+          - task: NodeTool@0
+            displayName: Use Node.js 20
+            inputs:
+              versionSpec: 20.x
+
+          - script: |
+              TAG_VERSION="${BUILD_SOURCEBRANCHNAME#v}"
+              PKG_VERSION="$(node -p "require('./package.json').version")"
+
+              echo "Tag version: ${TAG_VERSION}"
+              echo "Package version: ${PKG_VERSION}"
+
+              if [ "${TAG_VERSION}" != "${PKG_VERSION}" ]; then
+                echo "Version mismatch. Tag v${PKG_VERSION} is required for this package version."
+                exit 1
+              fi
+            displayName: Validate tag matches package version
+
+          - download: current
+            artifact: vsix
+            displayName: Download VSIX artifact
+
+          - script: |
+              VSIX_FILE="$(find "$(Pipeline.Workspace)/vsix" -name '*.vsix' | head -n 1)"
+              if [ -z "${VSIX_FILE}" ]; then
+                echo "No VSIX file found in downloaded artifacts."
+                exit 1
+              fi
+
+              if [ -z "$(VSCE_PAT)" ]; then
+                echo "VSCE_PAT is empty. Configure it as a secret pipeline variable."
+                exit 1
+              fi
+
+              echo "Publishing ${VSIX_FILE}"
+              npx @vscode/vsce publish --packagePath "${VSIX_FILE}" -p "$(VSCE_PAT)"
+            displayName: Publish packaged VSIX to VS Code Marketplace
+            env:
+              VSCE_PAT: $(VSCE_PAT)
